@@ -1,4 +1,4 @@
-import Layout from "./Layout.js";
+import Layout from "./layout/Layout.js";
 function App() {
   return (
     <div className="App">

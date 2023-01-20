@@ -4,12 +4,13 @@
 }
 
 .main {       
+    
     .container {
-        max-width: 1440px;
+        max-width: 1920px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 40px 100px;
+        padding: 47px 100px;
         margin: 0 auto;
 
         .logo {
@@ -24,6 +25,9 @@
                 justify-content: space-between;
 
                 .link {
+                    &:first-of-type{
+                        padding-right: 57px;
+                    }
                     
                     a {
                         font-size: 24px;

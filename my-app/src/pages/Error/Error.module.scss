@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin: auto;
+    max-width: 1920px;
+    text-align: center;
+    color: #FF6060;
+    
+    .error {
+        margin-top: 115px;
+        font-size: 263px; 
+    }
+
+    p {
+        margin-top: 66px;
+        margin-bottom: 182px;
+        font-size: 36px;
+    }
+
+    .link {
+        color: #FF6060;
+    }
+}

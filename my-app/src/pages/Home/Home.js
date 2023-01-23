@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import styles from "./Home.module.scss";
 import image from "./image.jpg";
 
@@ -11,6 +12,7 @@ function Home() {
         </div>
         <div className={styles.blocs_container}></div>
       </div>
+      <Footer />
     </div>
   );
 }

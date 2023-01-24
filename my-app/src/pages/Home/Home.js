@@ -1,19 +1,13 @@
 import Footer from "../../components/Footer/Footer";
 import styles from "./Home.module.scss";
 import Location from "../../components/Location/Location";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { DataContext } from "../../components/DataContext";
 
 function Home() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const getData = () => {
-      fetch("./data.json")
-        .then((res) => res.json())
-        .then((json) => setData(json));
-    };
-    getData();
-  }, []);
+  let navigate = useNavigate();
+  const data = useContext(DataContext);
 
   return (
     <div className={styles.main}>
@@ -24,7 +18,15 @@ function Home() {
         </div>
         <ul className={styles.blocs_container}>
           {data.map((location) => (
-            <Location key={location.id} titre={location.title} />
+            <div
+              key={location.id}
+              className={styles.navigate}
+              onClick={() => {
+                navigate(`/property/${location.id}`);
+              }}
+            >
+              <Location titre={location.title} />
+            </div>
           ))}
         </ul>
       </div>

@@ -1,3 +1,9 @@
+* { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 $primary-color : rgb(0, 105, 180);
 /* Setting the body to be a flexbox with a column direction and a height of 100vh. */
 body {

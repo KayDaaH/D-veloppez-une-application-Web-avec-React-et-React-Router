@@ -1,0 +1,49 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .pictureContainer {
+        position: relative;
+        width: 1240px;
+        height: 415px;
+
+        .picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        .leftArrow {
+            font-size: 95px;
+            color: white;
+            position: absolute;
+            top: 115px;
+            left: 15px ;
+            z-index: 2;
+            cursor: pointer;
+            user-select: none;
+
+
+        }
+        .rightArrow {
+            font-size: 95px;
+            color: white;
+            position: absolute;
+            top: 115px;
+            right: 15px;
+            z-index: 2;
+            cursor: pointer;
+            user-select: none;
+        }
+        .counter {
+            font-size: 18px;
+            color: white;
+            position: absolute;
+            bottom: 24px;
+            right: 613px;
+            z-index: 2;
+        }
+    }
+}
+

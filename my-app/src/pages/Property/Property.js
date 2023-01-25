@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../../components/DataContext";
 import Slideshow from "../../components/Slideshow/Slideshow";
+import Tags from "../../components/Tags/Tags";
 // import { DataContext } from "../../components/DataContext";
 import styles from "./Property.module.scss";
 
@@ -9,25 +10,94 @@ const Property = () => {
   let { id } = useParams();
   const data = useContext(DataContext);
   const dataProperty = data.filter((e) => e.id.includes(id));
-  const { description, equipments, location, tags, title, rating, pictures } =
-    dataProperty[0];
-  console.log(dataProperty);
+  const {
+    description,
+    equipments,
+    location,
+    tags,
+    title,
+    rating,
+    pictures,
+    host,
+  } = dataProperty[0];
+
+  const starSolid = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  );
 
   return (
     <div className={styles.main}>
-      <div className={styles.slideshow}>
-        <Slideshow pictures={pictures} />
+      <Slideshow pictures={pictures} />
+      <div className={styles.globalInfosContainer}>
+        <div className={styles.leftContainer}>
+          <p>{title}</p>
+          <div className={styles.location}>{location}</div>
+          <div className={styles.blocTags}>
+            {tags.map((tag, index) => (
+              <div key={index}>
+                <Tags tag={tag} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.rightContainer}>
+          <div className={styles.hote}>
+            <div>{host.name}</div>
+            <img src={host.picture} alt="avatar de l'hôte" />
+          </div>
+          <div className={styles.stars}>
+            <div
+              className={`
+              ${rating >= 1 ? `${styles.starSalmon}` : `${styles.star}`}`}
+            >
+              {starSolid}
+            </div>
+            <div
+              className={`
+              ${rating >= 2 ? `${styles.starSalmon}` : `${styles.star}`}`}
+            >
+              {starSolid}
+            </div>
+            <div
+              className={`
+              ${rating >= 3 ? `${styles.starSalmon}` : `${styles.star}`}`}
+            >
+              {starSolid}
+            </div>
+            <div
+              className={`
+              ${rating >= 4 ? `${styles.starSalmon}` : `${styles.star}`}`}
+            >
+              {starSolid}
+            </div>
+            <div
+              className={`
+              ${rating >= 5 ? `${styles.starSalmon}` : `${styles.star}`}`}
+            >
+              {starSolid}
+            </div>
+          </div>
+        </div>
       </div>
-      <h2>TITRE :{title}</h2>
       <div>DESCRIPTION : {description}</div>
       <div>ÉQUIPEMNETS : {equipments}</div>
-      <div>LOCALISATION :{location}</div>
-      <div>TAGS :{tags}</div>
       <div>IMAGES : {pictures} </div>
-
-      <div>NOTE :{rating}</div>
     </div>
   );
 };
 
 export default Property;
+
+// className={`
+//               ${isGrey ? `${styles.star}` : `${styles.starGrey}`}`}

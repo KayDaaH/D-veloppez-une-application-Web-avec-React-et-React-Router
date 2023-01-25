@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 import { DataContext } from "../../components/DataContext";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Tags from "../../components/Tags/Tags";
-// import { DataContext } from "../../components/DataContext";
+import AboutMenu from "../../components/AboutMenu/AboutMenu";
 import styles from "./Property.module.scss";
+import Stars from "../../components/Stars/Stars";
+import Footer from "../../components/Footer/Footer";
 
 const Property = () => {
   let { id } = useParams();
@@ -20,21 +22,6 @@ const Property = () => {
     pictures,
     host,
   } = dataProperty[0];
-
-  const starSolid = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      class="w-6 h-6"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-        clip-rule="evenodd"
-      />
-    </svg>
-  );
 
   return (
     <div className={styles.main}>
@@ -56,43 +43,18 @@ const Property = () => {
             <div>{host.name}</div>
             <img src={host.picture} alt="avatar de l'hôte" />
           </div>
-          <div className={styles.stars}>
-            <div
-              className={`
-              ${rating >= 1 ? `${styles.starSalmon}` : `${styles.star}`}`}
-            >
-              {starSolid}
-            </div>
-            <div
-              className={`
-              ${rating >= 2 ? `${styles.starSalmon}` : `${styles.star}`}`}
-            >
-              {starSolid}
-            </div>
-            <div
-              className={`
-              ${rating >= 3 ? `${styles.starSalmon}` : `${styles.star}`}`}
-            >
-              {starSolid}
-            </div>
-            <div
-              className={`
-              ${rating >= 4 ? `${styles.starSalmon}` : `${styles.star}`}`}
-            >
-              {starSolid}
-            </div>
-            <div
-              className={`
-              ${rating >= 5 ? `${styles.starSalmon}` : `${styles.star}`}`}
-            >
-              {starSolid}
-            </div>
-          </div>
+          <Stars rating={rating} />
         </div>
       </div>
-      <div>DESCRIPTION : {description}</div>
-      <div>ÉQUIPEMNETS : {equipments}</div>
-      <div>IMAGES : {pictures} </div>
+      <div className={styles.blocMenus}>
+        <div className={styles.description}>
+          <AboutMenu title="Description" text={description} />
+        </div>
+        <div className={styles.equipements}>
+          <AboutMenu title="Équipements" text={equipments} />
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

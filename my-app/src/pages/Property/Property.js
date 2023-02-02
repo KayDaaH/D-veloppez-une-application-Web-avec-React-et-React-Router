@@ -23,9 +23,6 @@ const Property = () => {
     host,
   } = dataProperty[0];
 
-  console.log(equipments);
-  const equipmentsString = equipments.join("\n");
-
   return (
     <div className={styles.main}>
       <Slideshow pictures={pictures} />
@@ -54,7 +51,7 @@ const Property = () => {
           <AboutMenu title="Description" text={description} />
         </div>
         <div className={styles.equipements}>
-          <AboutMenu title="Équipements" text={equipmentsString} />
+          <AboutMenu title="Équipements" text={equipments} />
         </div>
       </div>
       <Footer />
@@ -63,6 +60,3 @@ const Property = () => {
 };
 
 export default Property;
-
-// className={`
-//               ${isGrey ? `${styles.star}` : `${styles.starGrey}`}`}

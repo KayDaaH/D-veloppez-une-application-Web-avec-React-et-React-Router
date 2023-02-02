@@ -41,7 +41,11 @@ const AboutMenu = ({ title, text }) => {
           dropdownIsOpen ? `${styles.text} ${styles.active}` : `${styles.text}`
         }
       >
-        {text}
+        {typeof text == "string" ? (
+          <div>{text}</div>
+        ) : (
+          text.map((equipment, index) => <div key={index}>{equipment}</div>)
+        )}
       </div>
     </div>
   );

@@ -34,6 +34,14 @@
                         color: #FF6060;
                         text-decoration: none;
                         padding: 8px 12px;
+                        position: relative;                    
+                    }
+
+                    &.active {
+                        text-decoration: underline;
+                        color: #FF6060;
+
+                        
                     }
                 }
             }

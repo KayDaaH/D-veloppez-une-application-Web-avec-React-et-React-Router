@@ -13,7 +13,7 @@ function Header() {
         </div>
 
         <nav className={styles.nav}>
-          {pathname === "/" ? (
+          {pathname === "/" && (
             <ul className={styles.list}>
               <li className={`${styles.link} ${styles.active}`}>
                 <Link to="/">Accueil</Link>
@@ -22,12 +22,23 @@ function Header() {
                 <Link to="/about">A Propos</Link>
               </li>
             </ul>
-          ) : (
+          )}
+          {pathname === "/about" && (
             <ul className={styles.list}>
               <li className={styles.link}>
                 <Link to="/">Accueil</Link>
               </li>
               <li className={`${styles.link} ${styles.active}`}>
+                <Link to="/about">A Propos</Link>
+              </li>
+            </ul>
+          )}
+          {pathname !== "/about" && pathname !== "/" && (
+            <ul className={styles.list}>
+              <li className={styles.link}>
+                <Link to="/">Accueil</Link>
+              </li>
+              <li className={styles.link}>
                 <Link to="/about">A Propos</Link>
               </li>
             </ul>

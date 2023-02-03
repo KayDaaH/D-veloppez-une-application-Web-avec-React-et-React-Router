@@ -24,3 +24,31 @@
 
     }
 }
+@media screen and (min-width: 556px) and (max-width: 809px){
+    .main {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 647px){
+    .main {
+        width: 100%;
+        height: 340px;
+        border-radius: 10px;
+        background: linear-gradient(#FF6060
+        30%, #000000
+        170%);
+        margin-bottom: 20px;
+        position: relative;
+    
+        p {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            font-size: 18px;
+            color: white;
+            padding-right: 20px;
+    
+        }
+    }
+}

@@ -52,7 +52,27 @@
         margin-bottom: 209px;
     }    
     }
-    // .footer {
-    //     width: 100%;
-    // }
+}
+
+@media screen and (max-width: 900px) {
+    .main {
+        .container {
+            padding: 0px 50px;
+        .menus_container {
+            padding: 31px 0px 0px 0px ;
+        }    
+        }
+    }
+}
+
+@media screen and (max-width: 555px){
+    .main {
+        .container {
+            padding: 0px 20px;
+        .menus_container {
+            padding: 19px 0px 0px 0px ;
+        }    
+        }
+    }
+
 }

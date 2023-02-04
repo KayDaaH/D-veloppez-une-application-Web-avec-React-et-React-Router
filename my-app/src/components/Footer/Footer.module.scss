@@ -35,3 +35,37 @@
     
 
 }
+
+@media screen and (max-width: 555px){
+    .main {    
+        background-color: black;
+        width: 100%;
+        height: 209px;
+        position: absolute;
+        bottom: 0px;   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+                .logoblack {
+                    width: 122px;
+                    height: 36px;
+                    background-image: url("./logoblack.png");
+                    margin-top: 66px;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    // max-width: 100%;
+                    // max-height: 100%;
+                    margin-bottom: 32px;
+                }
+        
+                .mention {
+                    color: white;
+                    font-size: 12px;
+                    
+                }
+          
+        
+    
+    }
+}

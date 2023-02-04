@@ -14,7 +14,10 @@ function Home() {
       <div className={styles.container}>
         <div className={styles.bloc_image}>
           <div className={styles.darken}></div>
-          <p className={styles.title}>Chez vous, partout et ailleurs</p>
+          <p className={styles.title}>
+            <span>Chez vous, </span>
+            <span>partout et ailleurs</span>
+          </p>
         </div>
         <ul className={styles.blocs_container}>
           {data.map((location) => (

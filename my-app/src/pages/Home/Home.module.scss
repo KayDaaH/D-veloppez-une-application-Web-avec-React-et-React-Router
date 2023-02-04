@@ -236,3 +236,20 @@
         }
     }
 }
+
+@media screen and (max-width: 477px){
+    .main {
+        .container {
+            .bloc_image {
+                    p {
+             
+                        display: flex;
+                        flex-direction: column;
+                        left: 16px;
+                        transform: translate(0px, -50% );
+                        text-align: start;
+                    }
+            }
+        }
+    }
+}
